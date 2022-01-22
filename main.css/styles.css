@@ -5,8 +5,8 @@ body {
   }
 
 .grid{
-    height: 25rem;
-    width: 25rem;
+    height: 24.5rem;
+    width: 24.5rem;
     position: relative;
     left: 30%;
     border: 5px solid #000;
@@ -15,8 +15,12 @@ body {
     flex-direction: row;
 }
 
-.gridBox{
+.gridSquare{
     border: 1px solid blue;
     height: 6rem;
     width: 6rem;
+}
+
+.selected{
+    background-color: black;
 }
