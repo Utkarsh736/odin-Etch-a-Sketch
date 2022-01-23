@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -5,8 +9,8 @@ body {
   }
 
 .grid{
-    height: 24.5rem;
-    width: 24.5rem;
+    height: 30rem;
+    width: 30rem;
     position: relative;
     left: 30%;
     border: 5px solid #000;
@@ -16,9 +20,9 @@ body {
 }
 
 .gridSquare{
-    border: 1px solid blue;
-    height: 6rem;
-    width: 6rem;
+    /* border: 1px solid blue; */
+    height: 1.75rem;
+    width: 1.75rem;
 }
 
 .selected{
