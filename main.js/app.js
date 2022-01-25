@@ -1,8 +1,8 @@
 const grid = document.getElementById('grid');
+const eraser = document.getElementById('eraser');
 
 function gridSetup(){
     
-
     for(let i=1; i<=16*16; i++ ){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('gridSquare');
@@ -27,3 +27,7 @@ Squares.forEach((selectSquare)=>{
 function addClass(e){
     e.classList.add('selected');
 }
+
+eraser.addEventListener('click', ()=>{
+    gridSetup();
+})
