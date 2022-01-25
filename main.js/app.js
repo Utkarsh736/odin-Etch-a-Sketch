@@ -1,8 +1,7 @@
-const container = document.getElementById('container');
+const grid = document.getElementById('grid');
 
 function gridSetup(){
-    const grid = document.createElement('div');
-    grid.classList.add('grid');
+    
 
     for(let i=1; i<=16*16; i++ ){
         const gridSquare = document.createElement('div');
@@ -12,7 +11,6 @@ function gridSetup(){
         grid.appendChild(gridSquare);
     };
 
-    container.appendChild(grid);
 };
 
 gridSetup()
@@ -21,7 +19,7 @@ const Squares = document.querySelectorAll('.gridSquare');
 
 Squares.forEach((selectSquare)=>{
     selectSquare.addEventListener('mouseover', ()=>{
-        console.log(selectSquare.id);
+        // console.log(selectSquare.id);
         addClass(selectSquare);
     });
 });

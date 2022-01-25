@@ -8,13 +8,34 @@ body {
     background-color: rgb(201, 196, 196);
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 5px solid black;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 5px solid blue;
+}
+
+.panel{
+    border: 5px solid pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .grid{
+    border: 5px solid red;
     height: 500px;
     width: 500px;
     background-color: rgb(255, 255, 255);
     position: relative;
-    top: 30%;
-    left: 30%;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
