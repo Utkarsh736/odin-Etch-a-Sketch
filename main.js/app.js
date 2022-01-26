@@ -5,9 +5,9 @@ const rainbow = document.getElementById('rainbow');
 const clear = document.getElementById('clear');
 const size = document.getElementById('size');
 
-// let DEFAULT_COLOR = #fff;
-// let DEFAULT_MODE = color;
-// let DEFAULT_SIZE = 16;
+// let DEFAULT_COLOR = black;
+let DEFAULT_MODE = color;
+let DEFAULT_SIZE = 16;
 
 function gridSetup(){
     
@@ -20,9 +20,10 @@ function gridSetup(){
     };
 
 };
+gridSetup();
 
 const Squares = document.querySelectorAll('.gridSquare');
-console.log(Squares);
+// console.log(Squares);
 
 Squares.forEach((selectSquare)=>{
     selectSquare.addEventListener('mouseover', ()=>{
@@ -31,5 +32,3 @@ Squares.forEach((selectSquare)=>{
     });
 });
 
-
-gridSetup()
