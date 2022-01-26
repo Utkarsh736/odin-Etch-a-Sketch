@@ -1,5 +1,13 @@
 const grid = document.getElementById('grid');
+const color = document.getElementById('color');
 const eraser = document.getElementById('eraser');
+const rainbow = document.getElementById('rainbow');
+const clear = document.getElementById('clear');
+const size = document.getElementById('size');
+
+// let DEFAULT_COLOR = #fff;
+// let DEFAULT_MODE = color;
+// let DEFAULT_SIZE = 16;
 
 function gridSetup(){
     
@@ -13,21 +21,15 @@ function gridSetup(){
 
 };
 
-gridSetup()
-
 const Squares = document.querySelectorAll('.gridSquare');
+console.log(Squares);
 
 Squares.forEach((selectSquare)=>{
     selectSquare.addEventListener('mouseover', ()=>{
-        // console.log(selectSquare.id);
-        addClass(selectSquare);
+        console.log(selectSquare.id);
+
     });
 });
 
-function addClass(e){
-    e.classList.add('selected');
-}
 
-eraser.addEventListener('click', ()=>{
-    gridSetup();
-})
+gridSetup()
