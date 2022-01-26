@@ -5,9 +5,11 @@ const rainbow = document.getElementById('rainbow');
 const clear = document.getElementById('clear');
 const size = document.getElementById('size');
 
-// let DEFAULT_COLOR = black;
-let DEFAULT_MODE = color;
-let DEFAULT_SIZE = 16;
+
+let default_color = 'black';
+let default_mode = 'color';
+let default_size = 16;
+
 
 function gridSetup(){
     
@@ -20,15 +22,67 @@ function gridSetup(){
     };
 
 };
-gridSetup();
 
-const Squares = document.querySelectorAll('.gridSquare');
-// console.log(Squares);
+function main(){
+    const Squares = document.querySelectorAll('.gridSquare');
 
-Squares.forEach((selectSquare)=>{
-    selectSquare.addEventListener('mouseover', ()=>{
-        console.log(selectSquare.id);
+    Squares.forEach((selectSquare)=>{
+        selectSquare.addEventListener('mouseover', ()=>{
+            sketch(default_mode);
 
+        });
     });
-});
+};
+
+function sketch(mode){
+
+    switch(mode){
+        case 'color':
+            console.log('c');
+            break;
+
+        case 'rainbow':
+            console.log('r');
+            break;
+
+        case 'eraser':
+            console.log('e');
+            break;
+    };
+
+    console.log(default_color);
+    console.log(default_mode);
+    console.log(default_size);
+};
+
+
+function buttons(){
+    color.addEventListener('click', ()=>{
+        console.log('color');
+        default_mode = 'color';
+    });
+    
+    rainbow.addEventListener('click', ()=>{
+        console.log('rainbow');
+        default_mode = 'rainbow';
+    });
+    
+    eraser.addEventListener('click', ()=>{
+        console.log('eraser');
+        default_mode = 'eraser';
+    });
+    
+    clear.addEventListener('click', ()=>{
+        console.log('clear');
+    });
+};
+
+
+
+
+window.onload= function(){
+    gridSetup();
+    main();
+    buttons();
+};
 
