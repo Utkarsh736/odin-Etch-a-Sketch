@@ -13,7 +13,7 @@ let default_size = 16;
 
 function gridSetup(){
     
-    for(let i=1; i<=16*16; i++ ){
+    for(let i=1; i<=4*4; i++ ){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('gridSquare');
         gridSquare.setAttribute('id', i);
@@ -28,31 +28,26 @@ function main(){
 
     Squares.forEach((selectSquare)=>{
         selectSquare.addEventListener('mouseover', ()=>{
-            sketch(default_mode);
-
+            sketch(default_mode, selectSquare);
         });
     });
 };
 
-function sketch(mode){
+function sketch(mode, selectSquare){
 
     switch(mode){
         case 'color':
-            console.log('c');
+            selectSquare.style.backgroundColor = "black";
             break;
 
         case 'rainbow':
-            console.log('r');
+            selectSquare.style.backgroundColor = "blue";
             break;
 
         case 'eraser':
-            console.log('e');
+            selectSquare.style.backgroundColor = "white";
             break;
     };
-
-    console.log(default_color);
-    console.log(default_mode);
-    console.log(default_size);
 };
 
 
