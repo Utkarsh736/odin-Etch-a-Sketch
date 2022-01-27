@@ -1,19 +1,24 @@
 const grid = document.getElementById('grid');
-const color = document.getElementById('color');
-const eraser = document.getElementById('eraser');
-const rainbow = document.getElementById('rainbow');
-const clear = document.getElementById('clear');
-const size = document.getElementById('size');
+const color_btn = document.getElementById('color');
+const eraser_btn = document.getElementById('eraser');
+const rainbow_btn = document.getElementById('rainbow');
+const clear_btn = document.getElementById('clear');
+const size_btn = document.getElementById('size');
 
+const DEFAULT_COLOR = 'black';
+const DEFAULT_MODE = 'color';
+const DEFAULT_SIZE = 16;
 
-let default_color = 'black';
-let default_mode = 'color';
-let default_size = 16;
+let color = DEFAULT_COLOR;
+let mode = DEFAULT_MODE;
+let size = DEFAULT_SIZE;
 
 
 function gridSetup(){
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     
-    for(let i=1; i<=4*4; i++ ){
+    for(let i=1; i<=size*size; i++ ){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('gridSquare');
         gridSquare.setAttribute('id', i);
@@ -28,7 +33,7 @@ function main(){
 
     Squares.forEach((selectSquare)=>{
         selectSquare.addEventListener('mouseover', ()=>{
-            sketch(default_mode, selectSquare);
+            sketch(mode, selectSquare);
         });
     });
 };
@@ -52,22 +57,22 @@ function sketch(mode, selectSquare){
 
 
 function buttons(){
-    color.addEventListener('click', ()=>{
+    color_btn.addEventListener('click', ()=>{
         console.log('color');
-        default_mode = 'color';
+        mode = 'color';
     });
     
-    rainbow.addEventListener('click', ()=>{
+    rainbow_btn.addEventListener('click', ()=>{
         console.log('rainbow');
-        default_mode = 'rainbow';
+        mode = 'rainbow';
     });
     
-    eraser.addEventListener('click', ()=>{
+    eraser_btn.addEventListener('click', ()=>{
         console.log('eraser');
-        default_mode = 'eraser';
+        mode = 'eraser';
     });
     
-    clear.addEventListener('click', ()=>{
+    clear_btn.addEventListener('click', ()=>{
         console.log('clear');
     });
 };
