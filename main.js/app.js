@@ -46,7 +46,8 @@ function sketch(mode, selectSquare){
             break;
 
         case 'rainbow':
-            selectSquare.style.backgroundColor = "blue";
+            selectSquare.style.backgroundColor = `#${rgb()}`;
+            
             break;
 
         case 'eraser':
@@ -77,6 +78,10 @@ function buttons(){
     });
 };
 
+function rgb(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
 
 
 
