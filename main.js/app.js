@@ -15,7 +15,7 @@ let mode = DEFAULT_MODE;
 let size = DEFAULT_SIZE;
 
 
-function gridSetup(){
+function gridSetup(size){
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     
@@ -84,15 +84,29 @@ function rgb(){
     return randomColor;
 }
 
-slider_range.addEventListener('input', ()=>{
-    // console.log(slider_range.value);
-    size = slider_range.value;
+function gridClear(){
+    grid.innerHTML = "";
+}
 
-    gridSetup();
-});
+function gridReload(){
+    gridClear();
+    gridSetup(size);
+}
+
+clear_btn.addEventListener('click', ()=>{
+    gridReload();
+    main();
+    console.log(grid);
+})
+
+// slider_range.addEventListener('input', ()=>{
+//     // console.log(slider_range.value);
+//     size = slider_range.value;
+//     gridSetup(size);
+// });
 
 window.onload= function(){
-    gridSetup();
+    gridSetup(DEFAULT_SIZE);
     main();
     buttons();
 };
