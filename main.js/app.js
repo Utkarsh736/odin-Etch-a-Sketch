@@ -26,6 +26,7 @@ function gridSetup(size){
         // gridSquare.textContent = i;
         grid.appendChild(gridSquare);
     };
+    main();
     console.log(size);
 };
 
@@ -95,7 +96,7 @@ function gridReload(){
 
 clear_btn.addEventListener('click', ()=>{
     gridReload();
-    main();
+    // main();
     console.log(grid);
 })
 
@@ -107,7 +108,7 @@ clear_btn.addEventListener('click', ()=>{
 
 window.onload= function(){
     gridSetup(DEFAULT_SIZE);
-    main();
+    // main();
     buttons();
 };
 
