@@ -96,19 +96,18 @@ function gridReload(){
 
 clear_btn.addEventListener('click', ()=>{
     gridReload();
-    // main();
     console.log(grid);
 })
 
-// slider_range.addEventListener('input', ()=>{
-//     // console.log(slider_range.value);
-//     size = slider_range.value;
-//     gridSetup(size);
-// });
+slider_range.addEventListener('change', ()=>{
+    // console.log(slider_range.value);
+    size = slider_range.value;
+    gridReload();
+    gridSetup(size);
+});
 
 window.onload= function(){
     gridSetup(DEFAULT_SIZE);
-    // main();
     buttons();
 };
 
