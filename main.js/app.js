@@ -4,6 +4,7 @@ const eraser_btn = document.getElementById('eraser');
 const rainbow_btn = document.getElementById('rainbow');
 const clear_btn = document.getElementById('clear');
 const size_slider = document.getElementById('size');
+let slider_range = document.getElementById('sliderRange');
 
 const DEFAULT_COLOR = 'black';
 const DEFAULT_MODE = 'color';
@@ -22,10 +23,10 @@ function gridSetup(){
         const gridSquare = document.createElement('div');
         gridSquare.classList.add('gridSquare');
         gridSquare.setAttribute('id', i);
-        gridSquare.textContent = i;
+        // gridSquare.textContent = i;
         grid.appendChild(gridSquare);
     };
-
+    console.log(size);
 };
 
 function main(){
@@ -83,7 +84,12 @@ function rgb(){
     return randomColor;
 }
 
+slider_range.addEventListener('input', ()=>{
+    // console.log(slider_range.value);
+    size = slider_range.value;
 
+    gridSetup();
+});
 
 window.onload= function(){
     gridSetup();
