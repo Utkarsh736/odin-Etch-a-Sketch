@@ -3,7 +3,7 @@ const color_btn = document.getElementById('color');
 const eraser_btn = document.getElementById('eraser');
 const rainbow_btn = document.getElementById('rainbow');
 const clear_btn = document.getElementById('clear');
-const size_btn = document.getElementById('size');
+const size_slider = document.getElementById('size');
 
 const DEFAULT_COLOR = 'black';
 const DEFAULT_MODE = 'color';
