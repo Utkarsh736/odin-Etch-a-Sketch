@@ -4,6 +4,7 @@ const eraser_btn = document.getElementById('eraser');
 const rainbow_btn = document.getElementById('rainbow');
 const clear_btn = document.getElementById('clear');
 const size_slider = document.getElementById('size');
+const sizeValue = document.getElementById('sizeValue');
 let slider_range = document.getElementById('sliderRange');
 
 const DEFAULT_COLOR = 'black';
@@ -61,50 +62,50 @@ function sketch(mode, selectSquare){
 
 function buttons(){
     color_btn.addEventListener('click', ()=>{
-        console.log('color');
         mode = 'color';
     });
     
     rainbow_btn.addEventListener('click', ()=>{
-        console.log('rainbow');
         mode = 'rainbow';
     });
     
     eraser_btn.addEventListener('click', ()=>{
-        console.log('eraser');
         mode = 'eraser';
     });
     
     clear_btn.addEventListener('click', ()=>{
-        console.log('clear');
+        gridReload();
+    });
+
+    slider_range.addEventListener('change', ()=>{
+        size = slider_range.value;
+        gridReload();
+        gridSetup(size);
+    });
+
+    slider_range.addEventListener('mouseenter', ()=>{
+        size = slider_range.value;
+        sizeUpdate(size);
     });
 };
 
 function rgb(){
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
-}
+};
 
 function gridClear(){
     grid.innerHTML = "";
-}
+};
 
 function gridReload(){
     gridClear();
     gridSetup(size);
-}
+};
 
-clear_btn.addEventListener('click', ()=>{
-    gridReload();
-    console.log(grid);
-})
-
-slider_range.addEventListener('change', ()=>{
-    // console.log(slider_range.value);
-    size = slider_range.value;
-    gridReload();
-    gridSetup(size);
-});
+function sizeUpdate(size){
+    sizeValue.innerHTML = `${size} X ${size}`;
+};
 
 window.onload= function(){
     gridSetup(DEFAULT_SIZE);
