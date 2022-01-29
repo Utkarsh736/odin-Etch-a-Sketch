@@ -14,7 +14,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    /* border: 5px solid black; */
 }
 
 .title{
@@ -23,7 +22,6 @@ body {
     width: 1000px;
     font-size: 80px;
     text-align: center;
-    /* border: 5px solid red; */
 }
 
 .main{
@@ -32,27 +30,24 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    /* border: 5px solid blue; */
 }
 
 .panel{
     height: 350px;
     width: 150px;
-    /* border: 5px solid pink; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .grid{
-    /* border: 5px solid red; */
     height: 400px;
     width: 400px;
     margin: 20px;
@@ -65,7 +60,6 @@ footer{
     width: 1000px;
     font-size: 20px;
     text-align: center;
-    /* border: 5px solid green; */
 }
 
 .selected{
